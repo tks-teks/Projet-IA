@@ -1,0 +1,5 @@
+INFO service started
+WARN high memory usage
+ERROR disk full on /var
+INFO scheduled backup complete
+ERROR unauthorized config change
