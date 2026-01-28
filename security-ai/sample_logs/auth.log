@@ -1,0 +1,5 @@
+Failed password for user=alice ip=10.0.0.5
+Accepted password for user=bob ip=10.0.0.8
+Failed password for user=admin ip=203.0.113.9
+Failed password for user=svc_backup ip=198.51.100.22
+Accepted password for user=carol ip=10.0.0.12

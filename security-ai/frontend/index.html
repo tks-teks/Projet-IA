@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security AI Guardian</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="./app.js"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <div class="max-w-7xl mx-auto px-6 py-8">
+    <header class="flex items-center justify-between mb-6">
+      <div>
+        <h1 class="text-3xl font-bold">Security AI Guardian</h1>
+        <p class="text-slate-400">Assistant vocal KHELIA • Défense adaptative basée logs</p>
+      </div>
+      <div class="flex gap-3">
+        <button id="muteBtn" class="px-4 py-2 rounded bg-slate-800 hover:bg-slate-700">Mute</button>
+        <button id="speakBtn" class="px-4 py-2 rounded bg-cyan-600 hover:bg-cyan-500">Parler</button>
+      </div>
+    </header>
+
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <section class="lg:col-span-2 space-y-6">
+        <div class="bg-slate-900/70 rounded-xl p-5 border border-slate-800">
+          <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-semibold">Assistant Vocal</h2>
+            <button id="micBtn" class="px-4 py-2 rounded bg-indigo-600 hover:bg-indigo-500">Micro</button>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-slate-900 rounded-lg p-4 border border-slate-800">
+              <p class="text-sm text-slate-400 mb-2">Transcription</p>
+              <p id="transcript" class="text-lg font-medium">Dites "KHELIA" pour activer.</p>
+            </div>
+            <div class="bg-slate-900 rounded-lg p-4 border border-slate-800">
+              <p class="text-sm text-slate-400 mb-2">Réponse</p>
+              <p id="assistantReply" class="text-lg font-medium">Prête pour vos commandes.</p>
+            </div>
+          </div>
+          <div class="mt-4 text-sm text-slate-400" id="assistantStatus">Statut: idle</div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-slate-900/70 rounded-xl p-5 border border-slate-800">
+            <h2 class="text-lg font-semibold mb-4">Alertes</h2>
+            <canvas id="alertsChart" height="140"></canvas>
+          </div>
+          <div class="bg-slate-900/70 rounded-xl p-5 border border-slate-800">
+            <h2 class="text-lg font-semibold mb-4">Événements</h2>
+            <canvas id="eventsChart" height="140"></canvas>
+          </div>
+        </div>
+
+        <div class="bg-slate-900/70 rounded-xl p-5 border border-slate-800">
+          <h2 class="text-lg font-semibold mb-4">Alertes critiques</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead class="text-slate-400">
+                <tr>
+                  <th class="text-left py-2">ID</th>
+                  <th class="text-left py-2">Sévérité</th>
+                  <th class="text-left py-2">Titre</th>
+                  <th class="text-left py-2">Description</th>
+                </tr>
+              </thead>
+              <tbody id="alertsTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <aside class="bg-slate-900/70 rounded-xl p-5 border border-slate-800 flex flex-col">
+        <h2 class="text-lg font-semibold mb-3">AI Guardian</h2>
+        <p class="text-sm text-slate-400 mb-4">Avatar 3D réactif à la voix et aux alertes.</p>
+        <div class="flex-1 bg-slate-950 rounded-xl border border-slate-800">
+          <canvas id="avatarCanvas" class="w-full h-full"></canvas>
+        </div>
+        <div class="mt-4 text-sm text-slate-400" id="avatarState">State: idle</div>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
